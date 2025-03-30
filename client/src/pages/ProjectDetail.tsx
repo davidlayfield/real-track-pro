@@ -238,7 +238,7 @@ export default function ProjectDetail({ id }: { id: number }) {
     mutationFn: async (data: TaskFormValues) => {
       const payload = {
         ...data,
-        assignedTo: data.assignedTo ? parseInt(data.assignedTo) : undefined,
+        assignedTo: data.assignedTo && data.assignedTo !== "unassigned" ? parseInt(data.assignedTo) : undefined,
       };
       return apiRequest('POST', `/api/projects/${id}/tasks`, payload);
     },
@@ -1075,7 +1075,7 @@ export default function ProjectDetail({ id }: { id: number }) {
                             <SelectValue placeholder="Select team member" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="">Unassigned</SelectItem>
+                            <SelectItem value="unassigned">Unassigned</SelectItem>
                             {users.map((user: any) => (
                               <SelectItem key={user.id} value={user.id.toString()}>
                                 {user.name}
