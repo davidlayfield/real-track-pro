@@ -524,7 +524,7 @@ export default function ProjectDetail({ id }: { id: number }) {
         <Card>
           <CardContent className="pt-6">
             <div className="flex flex-col">
-              <p className="text-sm text-secondary">Progress</p>
+              <p className="text-sm font-semibold text-gray-700">Progress</p>
               <div className="mt-2">
                 <Progress value={project.progress} className="h-2" />
                 <p className="text-sm font-medium mt-1">{project.progress}%</p>
@@ -536,7 +536,7 @@ export default function ProjectDetail({ id }: { id: number }) {
         <Card>
           <CardContent className="pt-6">
             <div className="flex flex-col">
-              <p className="text-sm text-secondary">Tasks</p>
+              <p className="text-sm font-semibold text-gray-700">Tasks</p>
               <div className="flex items-center mt-1">
                 <p className="text-lg font-medium">{tasks.length}</p>
                 <p className="text-sm text-muted-foreground ml-2">
@@ -550,7 +550,7 @@ export default function ProjectDetail({ id }: { id: number }) {
         <Card>
           <CardContent className="pt-6">
             <div className="flex flex-col">
-              <p className="text-sm text-secondary">Next Milestone</p>
+              <p className="text-sm font-semibold text-gray-700">Next Milestone</p>
               {project.nextMilestone ? (
                 <div className="mt-1">
                   <p className="text-sm font-medium">{project.nextMilestone.title}</p>
