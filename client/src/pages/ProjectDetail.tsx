@@ -591,9 +591,9 @@ export default function ProjectDetail({ id }: { id: number }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* To Do Column */}
             <div>
-              <div className="bg-neutral-100 p-3 rounded-t-md flex items-center justify-between">
-                <h3 className="font-medium text-sm">To Do</h3>
-                <Badge variant="outline">{tasksByStatus.todo.length}</Badge>
+              <div className="bg-primary/10 p-3 rounded-t-md flex items-center justify-between">
+                <h3 className="font-medium text-sm text-primary-foreground">To Do</h3>
+                <Badge variant="outline" className="bg-white">{tasksByStatus.todo.length}</Badge>
               </div>
               <div 
                 className="bg-neutral-200/50 rounded-b-md p-2 min-h-[200px]"
@@ -625,9 +625,9 @@ export default function ProjectDetail({ id }: { id: number }) {
             
             {/* In Progress Column */}
             <div>
-              <div className="bg-neutral-100 p-3 rounded-t-md flex items-center justify-between">
-                <h3 className="font-medium text-sm">In Progress</h3>
-                <Badge variant="outline">{tasksByStatus.in_progress.length}</Badge>
+              <div className="bg-blue-500/90 p-3 rounded-t-md flex items-center justify-between">
+                <h3 className="font-medium text-sm text-white">In Progress</h3>
+                <Badge variant="outline" className="bg-white">{tasksByStatus.in_progress.length}</Badge>
               </div>
               <div 
                 className="bg-neutral-200/50 rounded-b-md p-2 min-h-[200px]"
@@ -659,9 +659,9 @@ export default function ProjectDetail({ id }: { id: number }) {
             
             {/* Review Column */}
             <div>
-              <div className="bg-neutral-100 p-3 rounded-t-md flex items-center justify-between">
-                <h3 className="font-medium text-sm">In Review</h3>
-                <Badge variant="outline">{tasksByStatus.review.length}</Badge>
+              <div className="bg-amber-500/90 p-3 rounded-t-md flex items-center justify-between">
+                <h3 className="font-medium text-sm text-white">In Review</h3>
+                <Badge variant="outline" className="bg-white">{tasksByStatus.review.length}</Badge>
               </div>
               <div 
                 className="bg-neutral-200/50 rounded-b-md p-2 min-h-[200px]"
@@ -693,9 +693,9 @@ export default function ProjectDetail({ id }: { id: number }) {
             
             {/* Completed Column */}
             <div>
-              <div className="bg-neutral-100 p-3 rounded-t-md flex items-center justify-between">
-                <h3 className="font-medium text-sm">Completed</h3>
-                <Badge variant="outline">{tasksByStatus.completed.length}</Badge>
+              <div className="bg-green-600/90 p-3 rounded-t-md flex items-center justify-between">
+                <h3 className="font-medium text-sm text-white">Completed</h3>
+                <Badge variant="outline" className="bg-white">{tasksByStatus.completed.length}</Badge>
               </div>
               <div 
                 className="bg-neutral-200/50 rounded-b-md p-2 min-h-[200px]"
