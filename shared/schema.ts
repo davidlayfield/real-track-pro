@@ -95,10 +95,18 @@ export const activities = pgTable("activities", {
 // Zod schemas
 export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true });
 export const insertProjectSchema = createInsertSchema(projects).omit({ id: true, createdAt: true });
-export const insertTaskSchema = createInsertSchema(tasks).omit({ id: true, createdAt: true });
+export const insertTaskSchema = createInsertSchema(tasks)
+  .omit({ id: true, createdAt: true })
+  .extend({
+    dueDate: z.string().optional().transform(val => val ? new Date(val) : undefined),
+  });
 export const insertFileSchema = createInsertSchema(files).omit({ id: true, uploadedAt: true });
 export const insertCommentSchema = createInsertSchema(comments).omit({ id: true, createdAt: true });
-export const insertMilestoneSchema = createInsertSchema(milestones).omit({ id: true, createdAt: true });
+export const insertMilestoneSchema = createInsertSchema(milestones)
+  .omit({ id: true, createdAt: true })
+  .extend({
+    dueDate: z.string().optional().transform(val => val ? new Date(val) : undefined),
+  });
 export const insertActivitySchema = createInsertSchema(activities).omit({ id: true, createdAt: true });
 
 // Types
