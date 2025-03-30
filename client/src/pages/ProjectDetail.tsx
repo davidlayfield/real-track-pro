@@ -238,6 +238,7 @@ export default function ProjectDetail({ id }: { id: number }) {
     mutationFn: async (data: TaskFormValues) => {
       const payload = {
         ...data,
+        status: 'todo', // Explicitly set default status to 'todo'
         assignedTo: data.assignedTo && data.assignedTo !== "unassigned" ? parseInt(data.assignedTo) : undefined,
       };
       return apiRequest('POST', `/api/projects/${id}/tasks`, payload);
@@ -379,13 +380,17 @@ export default function ProjectDetail({ id }: { id: number }) {
     },
   });
 
-  // Group tasks by status
+  // Group tasks by status with debugging
+  console.log("Tasks from API:", tasks);
+  
   const tasksByStatus = {
-    todo: tasks.filter((task: any) => task.status === 'todo').sort((a: any, b: any) => a.order - b.order),
-    in_progress: tasks.filter((task: any) => task.status === 'in_progress').sort((a: any, b: any) => a.order - b.order),
-    review: tasks.filter((task: any) => task.status === 'review').sort((a: any, b: any) => a.order - b.order),
-    completed: tasks.filter((task: any) => task.status === 'completed').sort((a: any, b: any) => a.order - b.order),
+    todo: Array.isArray(tasks) ? tasks.filter((task: any) => task.status === 'todo').sort((a: any, b: any) => a.order - b.order) : [],
+    in_progress: Array.isArray(tasks) ? tasks.filter((task: any) => task.status === 'in_progress').sort((a: any, b: any) => a.order - b.order) : [],
+    review: Array.isArray(tasks) ? tasks.filter((task: any) => task.status === 'review').sort((a: any, b: any) => a.order - b.order) : [],
+    completed: Array.isArray(tasks) ? tasks.filter((task: any) => task.status === 'completed').sort((a: any, b: any) => a.order - b.order) : [],
   };
+  
+  console.log("Tasks grouped by status:", tasksByStatus);
 
   // Handle task submission
   async function onSubmitTask(data: TaskFormValues) {
