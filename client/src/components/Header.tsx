@@ -30,7 +30,7 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
           className="mr-2 lg:hidden" 
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
-          <Menu className="text-secondary h-5 w-5" />
+          <Menu className="text-gray-700 h-5 w-5" />
         </Button>
         <Link href="/">
           <h1 className="text-xl font-semibold text-accent cursor-pointer">SimpliTask</h1>
@@ -47,16 +47,16 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
               autoFocus
               onBlur={() => setSearchOpen(false)}
             />
-            <Search className="absolute left-2 top-2 text-secondary h-4 w-4" />
+            <Search className="absolute left-2 top-2 text-gray-700 h-4 w-4" />
           </div>
         ) : (
           <Button variant="ghost" size="icon" className="hidden md:flex" onClick={() => setSearchOpen(true)}>
-            <Search className="text-secondary h-5 w-5" />
+            <Search className="text-gray-700 h-5 w-5" />
           </Button>
         )}
         
         <Button variant="ghost" size="icon">
-          <Bell className="text-secondary h-5 w-5" />
+          <Bell className="text-gray-700 h-5 w-5" />
         </Button>
         
         <DropdownMenu>
@@ -79,16 +79,16 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <User className="mr-2 h-4 w-4" />
+              <User className="mr-2 h-4 w-4 text-gray-700" />
               <span>Profile</span>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Settings className="mr-2 h-4 w-4" />
+              <Settings className="mr-2 h-4 w-4 text-gray-700" />
               <span>Settings</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout}>
-              <LogOut className="mr-2 h-4 w-4" />
+              <LogOut className="mr-2 h-4 w-4 text-gray-700" />
               <span>Log out</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

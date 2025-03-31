@@ -69,7 +69,7 @@ export default function TaskCard({ task, users, projects, onDragStart, onClick }
           <div>
             <h3 className="text-sm font-medium">{task.title}</h3>
             {task.description && (
-              <p className="text-xs text-secondary mt-1 line-clamp-2">{task.description}</p>
+              <p className="text-xs text-gray-600 mt-1 line-clamp-2">{task.description}</p>
             )}
           </div>
           <Badge className={priorityColor[task.priority as keyof typeof priorityColor] || "bg-gray-100"}>
@@ -87,23 +87,23 @@ export default function TaskCard({ task, users, projects, onDragStart, onClick }
                   size="sm"
                   className="mr-1"
                 />
-                <span className="text-xs text-secondary">{assignee.name.split(' ')[0]}</span>
+                <span className="text-xs text-gray-700">{assignee.name.split(' ')[0]}</span>
               </div>
             ) : (
-              <span className="text-xs text-secondary">Unassigned</span>
+              <span className="text-xs text-gray-700">Unassigned</span>
             )}
           </div>
           
           <div className="flex items-center">
             {files.length > 0 && (
               <div className="flex items-center mr-2" title={`${files.length} attachments`}>
-                <Paperclip className="h-3 w-3 text-secondary mr-1" />
-                <span className="text-xs text-secondary">{files.length}</span>
+                <Paperclip className="h-3 w-3 text-gray-700 mr-1" />
+                <span className="text-xs text-gray-700">{files.length}</span>
               </div>
             )}
             
             {task.dueDate && (
-              <div className={`text-xs ${isPastDue() ? 'text-red-500 font-medium' : 'text-secondary'}`}>
+              <div className={`text-xs ${isPastDue() ? 'text-red-500 font-medium' : 'text-gray-700'}`}>
                 {formatDate(task.dueDate)}
               </div>
             )}

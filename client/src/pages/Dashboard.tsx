@@ -196,11 +196,11 @@ export default function Dashboard() {
           <Table>
             <TableHeader className="bg-neutral-200">
               <TableRow>
-                <TableHead className="text-left text-xs font-medium text-secondary uppercase tracking-wider">Project Name</TableHead>
-                <TableHead className="text-left text-xs font-medium text-secondary uppercase tracking-wider">Status</TableHead>
-                <TableHead className="text-left text-xs font-medium text-secondary uppercase tracking-wider">Progress</TableHead>
-                <TableHead className="text-left text-xs font-medium text-secondary uppercase tracking-wider">Next Milestone</TableHead>
-                <TableHead className="text-left text-xs font-medium text-secondary uppercase tracking-wider">Due Date</TableHead>
+                <TableHead className="text-left text-xs font-semibold text-gray-800 uppercase tracking-wider">Project Name</TableHead>
+                <TableHead className="text-left text-xs font-semibold text-gray-800 uppercase tracking-wider">Status</TableHead>
+                <TableHead className="text-left text-xs font-semibold text-gray-800 uppercase tracking-wider">Progress</TableHead>
+                <TableHead className="text-left text-xs font-semibold text-gray-800 uppercase tracking-wider">Next Milestone</TableHead>
+                <TableHead className="text-left text-xs font-semibold text-gray-800 uppercase tracking-wider">Due Date</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -244,7 +244,7 @@ export default function Dashboard() {
                         style={{ width: `${project.progress}%` }}
                       ></div>
                     </div>
-                    <div className="text-xs text-secondary mt-1">{project.progress}%</div>
+                    <div className="text-xs font-medium text-gray-700 mt-1">{project.progress}%</div>
                   </TableCell>
                   <TableCell className="text-sm text-gray-800">
                     {project.nextMilestone?.title || 'No milestone'}
