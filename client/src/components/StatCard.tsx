@@ -16,7 +16,7 @@ export default function StatCard({ title, value, change, alert, className }: Sta
   return (
     <Card className={className}>
       <CardContent className="p-4">
-        <h3 className="text-sm font-medium text-secondary">{title}</h3>
+        <h3 className="text-sm font-semibold text-gray-700">{title}</h3>
         <p className="text-2xl font-semibold mt-1">{value}</p>
         
         {change && (

@@ -591,8 +591,8 @@ export default function ProjectDetail({ id }: { id: number }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* To Do Column */}
             <div>
-              <div className="bg-primary/10 p-3 rounded-t-md flex items-center justify-between">
-                <h3 className="font-medium text-sm text-primary-foreground">To Do</h3>
+              <div className="bg-slate-700/90 p-3 rounded-t-md flex items-center justify-between">
+                <h3 className="font-medium text-sm text-white">To Do</h3>
                 <Badge variant="outline" className="bg-white">{tasksByStatus.todo.length}</Badge>
               </div>
               <div 
