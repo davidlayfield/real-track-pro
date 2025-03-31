@@ -751,7 +751,7 @@ export default function ProjectDetail({ id }: { id: number }) {
               </div>
             </div>
           </div>
-          ) : viewMode === 'list' ? (
+          ) : (
             <div className="bg-white border rounded-lg overflow-hidden">
               <div className="bg-neutral-100 p-3 border-b text-sm font-medium flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -759,7 +759,7 @@ export default function ProjectDetail({ id }: { id: number }) {
                   <Badge>{Array.isArray(tasks) ? tasks.length : 0} tasks</Badge>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "default" : "outline"} className={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "bg-green-100 text-green-800" : ""}>
+                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "success" : "outline"}>
                     {tasks.filter((t: any) => t.status === 'completed').length} completed
                   </Badge>
                 </div>
@@ -841,7 +841,7 @@ export default function ProjectDetail({ id }: { id: number }) {
                   <Badge>{Array.isArray(tasks) ? tasks.length : 0} tasks</Badge>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "default" : "outline"} className={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "bg-green-100 text-green-800" : ""}>
+                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "success" : "outline"}>
                     {tasks.filter((t: any) => t.status === 'completed').length} completed
                   </Badge>
                 </div>

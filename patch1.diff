@@ -1,0 +1,10 @@
+--- client/src/pages/ProjectDetail.tsx
++++ client/src/pages/ProjectDetail.tsx
+@@ -759,7 +759,7 @@
+                 </div>
+                 <div className="flex items-center gap-2">
+-                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "success" : "outline"}>
++                  <Badge variant={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "default" : "outline"} className={tasks.filter((t: any) => t.status === 'completed').length > 0 ? "bg-green-100 text-green-800" : ""}>
+                     {tasks.filter((t: any) => t.status === 'completed').length} completed
+                   </Badge>
+                 </div>
